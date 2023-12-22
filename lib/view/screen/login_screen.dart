@@ -22,11 +22,17 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  
+
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   String? email;
   String? password;
   bool isLading = false;
+
+  //go to next screen
+    void loginNavigator() {
+    Navigator.pushNamedAndRemoveUntil(context, "/nav", (route) => false);
+  }
+
   void delay() async {
     await Future.delayed(const Duration(milliseconds: 700));
     isLading = false;
@@ -34,9 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
     loginNavigator();
   }
 
-  void loginNavigator() {
-    Navigator.pushNamedAndRemoveUntil(context, "/nav", (route) => false);
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -110,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   textStyle: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
-                              ))),
+                              ),),),
                         ),
                       ),
                       Padding(

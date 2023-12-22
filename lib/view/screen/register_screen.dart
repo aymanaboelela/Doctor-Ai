@@ -1,4 +1,3 @@
-
 import 'package:dr_ai/core/cache/cache.dart';
 import 'package:dr_ai/core/helper/responsive.dart';
 import 'package:dr_ai/core/helper/scaffold_snakbar.dart';
@@ -96,20 +95,22 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         title: "Password",
                       ),
                       Padding(
-                          padding:
-                              EdgeInsets.only(top: ScreenSize.height * 0.05764),
-                          child: CustomButton(
-                              title: "Register",
-                              onPressed: () async {
-                                if (formKey.currentState!.validate()) {
-                                  formKey.currentState?.save();
-                                  BlocProvider.of<RegisterCubit>(context)
-                                      .userRegister(
-                                          fullName: fullName!,
-                                          email: email!,
-                                          password: password!);
-                                }
-                              })),
+                        padding:
+                            EdgeInsets.only(top: ScreenSize.height * 0.05764),
+                        child: CustomButton(
+                          title: "Register",
+                          onPressed: () async {
+                            if (formKey.currentState!.validate()) {
+                              formKey.currentState?.save();
+                              BlocProvider.of<RegisterCubit>(context)
+                                  .userRegister(
+                                      fullName: fullName!,
+                                      email: email!,
+                                      password: password!);
+                            }
+                          },
+                        ),
+                      ),
                       Padding(
                         padding:
                             EdgeInsets.only(top: ScreenSize.height * 0.043807),

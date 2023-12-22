@@ -6,9 +6,12 @@ import 'package:meta/meta.dart';
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
+
   LoginCubit() : super(LoginInitial());
-  Future<void> userLogin(
-      {required String email, required String password}) async {
+
+  Future<void> userLogin
+  
+  ( {required String email, required String password}) async {
     emit(LoginLoading());
     try {
       await FirebaseAuth.instance
