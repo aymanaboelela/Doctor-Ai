@@ -62,6 +62,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                         color: Color(0xff8CAAB9)))),
       ),
       TextFormField(
+        
         style: widget.textFieldStyle ??
             const TextStyle(color: Colors.white, fontSize: 18),
         cursorColor: widget.cursorColor ?? Colors.white,
@@ -76,6 +77,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                 return null;
               }
             },
+         //?!  When you press anything on the screen, the keyboard comes down
+       onTapOutside: (event )=> FocusScope.of(context).unfocus(),
+
         onFieldSubmitted: widget.onFieldSubmitted,
         onSaved: widget.onSaved,
         onChanged: widget.onChanged,
